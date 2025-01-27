@@ -47,10 +47,9 @@ export function PrayerSection() {
                 a challenge, seeking guidance, or wishing to express gratitude, we are 
                 here to support you through prayer.
               </p>
-
               <p className="text-muted-foreground">
                 Our community is committed to lifting each other up and sharing in each 
-                other's joys and struggles.
+                other&apos;s joys and struggles.
               </p>
 
               <div className="flex items-center gap-6 pt-4">

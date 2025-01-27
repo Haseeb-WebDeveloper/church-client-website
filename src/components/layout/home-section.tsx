@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Heart } from "lucide-react";
 import Link from "next/link";
-import AnimatedButton from "../ui/animated-button";
 
 export function HomeSection() {
   return (
@@ -18,14 +17,14 @@ export function HomeSection() {
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-            Experience God's Love,{" "}
+            Experience God&apos;s Love,{" "}
             <span className="">Grow in Faith,</span>{" "}
             <span className="block mt-2">Impact the World</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             We believe in the power of community, worship, and service. Join us on a 
-            journey of faith where you can experience God's love, grow in your 
+            journey of faith where you can experience God&apos;s love, grow in your 
             relationship with Him, and make a positive impact in our world.
           </p>
 

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react";
-import Link from "next/link";
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },

@@ -45,7 +45,7 @@ export function ServicesSection() {
           <h2 className="text-3xl md:text-4xl font-bold">Church Services</h2>
           <p className="text-muted-foreground">
             We invite you to join us in worship and fellowship. Our services are designed 
-            to celebrate God's love, explore His Word, and inspire your spiritual journey.
+            to celebrate God&apos;s love, explore His Word, and inspire your spiritual journey.
           </p>
         </motion.div>
 

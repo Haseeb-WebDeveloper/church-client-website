@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { ArrowRight, Users, Baby, Music, Users2, Heart, Mic2 } from "lucide-react";
+import { Users, Baby, Music, Users2, Heart, Mic2 } from "lucide-react";
 
 const ministries = [
   {
@@ -94,7 +94,7 @@ export function MinistrySection() {
               transition={{ delay: 0.2 }}
               className="text-lg text-muted-foreground"
             >
-              We believe that ministry is the heart of our church experience. It's where 
+              We believe that ministry is the heart of our church experience. It&apos;s where 
               growth happens, relationships are built, and lives are changed.
             </motion.p>
           </div>
@@ -107,7 +107,7 @@ export function MinistrySection() {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {ministries.map((ministry, index) => {
+            {ministries.map((ministry) => {
               const Icon = ministry.icon;
               return (
                 <motion.div
