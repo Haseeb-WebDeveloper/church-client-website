@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Menu, X, Heart } from "lucide-react";
 import Image from "next/image";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -53,6 +54,7 @@ export function Navbar() {
 
         {/* Donate Button, Theme Toggle & Mobile Menu Toggle */}
         <div className="flex items-center gap-4">
+          <ModeToggle />
           <Button
             variant="default"
             className="hidden md:inline-flex bg-gradient-to-r from-primary/90 to-primary hover:from-primary hover:to-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"

@@ -10,10 +10,9 @@ import { Footer } from "@/components/layout/footer";
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
       <HomeSection />
-      <AboutSection />
       <ServicesSection />
+      <AboutSection />
       <MinistrySection />
       <PastorSection />
       <GroupsSection />
