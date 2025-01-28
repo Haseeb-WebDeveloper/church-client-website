@@ -38,7 +38,7 @@ const videos = [
 ];
 
 export function LiveVideos() {
-  const [activeVideo, setActiveVideo] = useState<number | null>(null);
+  const [activeVideo, setActiveVideo] = useState<number>(1); // Set default to first video
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const playerRef = useRef<HTMLIFrameElement>(null);
@@ -57,36 +57,67 @@ export function LiveVideos() {
     setIsPlaying(true);
   };
 
+  // Function to toggle play/pause for the main video
+  const toggleMainVideo = () => {
+    setIsPlaying(!isPlaying);
+  };
+
+  const activeVideoData = videos.find(v => v.id === activeVideo);
+
   return (
-    <section className="py-24">
+    <section className="py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          {/* Active Video Player */}
-          {activeVideo && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-12 aspect-video rounded-xl overflow-hidden bg-muted"
-            >
+          {/* Main Video Player/Thumbnail */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-12 aspect-video rounded-xl overflow-hidden bg-muted relative max-w-4xl mx-auto"
+          >
+            {isPlaying ? (
               <iframe
                 ref={playerRef}
-                src={`https://www.youtube.com/embed/${videos.find(v => v.id === activeVideo)?.url}?autoplay=1&start=${Math.floor(currentTime)}&enablejsapi=1`}
+                src={`https://www.youtube.com/embed/${activeVideoData?.url}?autoplay=1&start=${Math.floor(currentTime)}&enablejsapi=1`}
                 className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
-            </motion.div>
-          )}
+            ) : (
+              <div className="relative w-full h-full group cursor-pointer" onClick={toggleMainVideo}>
+                {/* Thumbnail for main video */}
+                <Image
+                  src={activeVideoData?.thumbnail || ''}
+                  alt={activeVideoData?.title || ''}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
+                
+                {/* Large play button */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Play className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+
+                {/* Video title overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <h2 className="text-xl font-semibold text-white">{activeVideoData?.title}</h2>
+                  <p className="text-white/80">{activeVideoData?.date}</p>
+                </div>
+              </div>
+            )}
+          </motion.div>
 
           {/* Video Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {videos.map((video) => (
               <motion.div
                 key={video.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`group cursor-pointer ${activeVideo === video.id ? 'ring-2 ring-primary' : ''}`}
+                className={`group cursor-pointer p-2 ${activeVideo === video.id ? '' : ''}`}
                 onClick={() => handleVideoSelect(video.id)}
               >
                 <div className="relative aspect-video rounded-lg overflow-hidden">

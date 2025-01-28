@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/footer";
 export default function LivePage() {
   return (
     <>
-      <LiveHero />
+      {/* <LiveHero /> */}
       <LiveVideos />
       <Footer />
     </>
