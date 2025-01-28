@@ -100,8 +100,8 @@ export function AboutSection() {
             className="mt-12 text-center max-w-3xl mx-auto"
           >
             <p className="text-lg font-medium text-primary">
-              "We believe in salvation through Jesus Christ, who offers forgiveness, 
-              redemption, and eternal life to all who believe in Him."
+              &ldquo;We believe in salvation through Jesus Christ, who offers forgiveness, 
+              redemption, and eternal life to all who believe in Him.&rdquo;
             </p>
           </motion.div>
         </div>
