@@ -46,6 +46,7 @@ export function ContactForm() {
         message: ""
       });
     } catch (error) {
+      console.log(error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",

@@ -40,7 +40,7 @@ export function DonationSection() {
               DONATION
             </h2>
             <p className="text-lg text-muted-foreground">
-              Your generosity helps us continue our mission of spreading God's love, 
+              Your generosity helps us continue our mission of spreading God&apos;s love, 
               serving our community, and making a difference in the world. Thank you 
               for partnering with us in ministry!
             </p>

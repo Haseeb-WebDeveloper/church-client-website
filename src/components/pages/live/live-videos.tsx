@@ -40,7 +40,7 @@ const videos = [
 export function LiveVideos() {
   const [activeVideo, setActiveVideo] = useState<number>(1); // Set default to first video
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
+  const [currentTime] = useState(0);
   const playerRef = useRef<HTMLIFrameElement>(null);
 
   // Function to load YouTube IFrame API

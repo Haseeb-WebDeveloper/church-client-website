@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import Image from "next/image";
 
 export function LivestreamSection() {
   return (
@@ -22,8 +21,8 @@ export function LivestreamSection() {
             </h2>
             <p className="text-lg text-muted-foreground">
               Join us live as we gather together virtually to worship, pray, and study 
-              God's Word. Whether you're unable to attend in person or joining us from 
-              around the world, we're excited to connect with you online.
+              God&apos;s Word. Whether youre unable to attend in person or joining us from 
+              around the world, we&apos;re excited to connect with you online.
             </p>
             <Button
               size="lg"
